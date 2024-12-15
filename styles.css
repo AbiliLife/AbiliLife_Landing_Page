@@ -476,11 +476,13 @@ nav {
 }
 
 .testimonial__card img {
-  max-width: 60px;
+  width: 60px; /* Set a fixed width */
+  height: 60px; /* Match height to width */
   margin-inline: auto;
   margin-bottom: 1rem;
   border-radius: 100%;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Ensures the image scales proportionally */
 }
 
 .testimonial__card h4 {
@@ -663,7 +665,7 @@ nav {
   }
 
   .craft__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .modern__container {
