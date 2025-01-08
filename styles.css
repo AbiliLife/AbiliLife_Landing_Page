@@ -77,6 +77,11 @@ header {
   background-repeat: no-repeat;
 }
 
+.header_links {
+  display: flex;
+  justify-content: space-between;
+}
+
 nav {
   max-width: var(--max-width);
   margin: auto;
