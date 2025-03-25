@@ -14,6 +14,13 @@ navLinks.addEventListener("click", (e) => {
   menuBtnIcon.setAttribute("class", "ri-menu-line");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const codeEditor = document.querySelector("._1r4fbvz.prism-code");
+    if (codeEditor) {
+        codeEditor.remove();
+    }
+});
+
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
