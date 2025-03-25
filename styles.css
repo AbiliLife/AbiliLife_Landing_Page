@@ -15,6 +15,17 @@
   box-sizing: border-box;
 }
 
+/* Hide the code editor */
+._1r4fbvz.prism-code {
+    display: none !important;
+}
+
+/* Adjust layout so the preview fills the available space */
+._10c8z0n {
+    width: 100% !important;
+}
+
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
