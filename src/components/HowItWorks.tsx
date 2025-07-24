@@ -1,7 +1,11 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Settings, Smartphone, CheckCircle } from 'lucide-react';
 
+import DemoModal from './DemoModal';
+
 const HowItWorks = () => {
+    const [isDemoOpen, setIsDemoOpen] = React.useState(false);
     const steps = [
         {
             icon: Settings,
@@ -94,7 +98,10 @@ const HowItWorks = () => {
                     viewport={{ once: true }}
                     className="text-center mt-12"
                 >
-                    <button className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer">
+                    <button
+                        onClick={() => setIsDemoOpen(true)}
+                        className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer"
+                    >
                         See Demo
                         <Smartphone className="inline ml-2" />
                     </button>
@@ -103,6 +110,8 @@ const HowItWorks = () => {
                     </p>
                 </motion.div>
             </div>
+            {/* Demo Modal */}
+            <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
         </section>
     );
 };

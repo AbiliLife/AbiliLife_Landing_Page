@@ -1,8 +1,12 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Car, ShoppingCart, Heart, Briefcase, GraduationCap, Smartphone } from 'lucide-react';
 import { Badge } from './ui/badge';
 
+import DemoModal from './DemoModal';
+
 const Ecosystem = () => {
+    const [isDemoOpen, setIsDemoOpen] = React.useState(false);
     const modules = [
         {
             icon: Car,
@@ -149,13 +153,18 @@ const Ecosystem = () => {
                             Each module works together to create a comprehensive support system,
                             empowering persons with disabilities to live independently and thrive in their communities.
                         </p>
-                        <button className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer">
+                        <button
+                            className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer"
+                            onClick={() => setIsDemoOpen(true)}
+                        >
                             How It Works
                             <Smartphone className="inline ml-2" />
                         </button>
                     </div>
                 </motion.div>
             </div>
+            {/* Demo Modal */}
+            <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
         </section>
     );
 };

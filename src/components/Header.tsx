@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 import { Menu, Smartphone, X } from 'lucide-react';
 
+import DemoModal from './DemoModal';
+
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
     const navItems = [
         { name: 'About', href: '#about' },
@@ -39,7 +42,10 @@ const Header = () => {
 
                     {/* CTA Button */}
                     <div className="hidden md:block">
-                        <button className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                        <button
+                            className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                            onClick={() => setIsDemoModalOpen(true)}
+                        >
                             See Demo <Smartphone className="inline ml-2" />
                         </button>
                     </div>
@@ -70,13 +76,18 @@ const Header = () => {
                                     {item.name}
                                 </a>
                             ))}
-                            <button className="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors mt-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                            <button
+                                className="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors mt-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                                onClick={() => setIsDemoModalOpen(true)}
+                            >
                                 See Demo
                             </button>
                         </div>
                     </div>
                 )}
             </nav>
+            {/* Demo Modal */}
+            <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
         </header>
     );
 };
