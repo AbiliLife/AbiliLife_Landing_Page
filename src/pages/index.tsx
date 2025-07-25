@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import Ecosystem from '@/components/Ecosystem';
 import ProblemSolution from '@/components/ProblemSolution';
 import HowItWorks from '@/components/HowItWorks';
+import Team from '@/components/Team';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
                 <Ecosystem />
                 <ProblemSolution />
                 <HowItWorks />
+                <Team />
             </main>
             <Footer />
         </div>
