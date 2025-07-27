@@ -1,4 +1,4 @@
-import { Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Twitter, Instagram, MessageCircleMore, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
     const socialLinks = [
@@ -8,6 +8,7 @@ const Footer = () => {
 
     const contactInfo = [
         { icon: Phone, text: '+254 742 560 540', href: 'tel:+254742560540' },
+        { icon: MessageCircleMore, text: 'Chat with us', href: 'https://wa.me/254742560540' },
         { icon: Mail, text: 'abililifekenya@gmail.com', href: 'mailto:abililifekenya@gmail.com' },
         { icon: MapPin, text: 'Nairobi, Kenya', href: '#' },
     ];
@@ -44,27 +45,22 @@ const Footer = () => {
                         <ul className="space-y-2">
                             <li>
                                 <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    How It Works
+                                    The Ecosystem
                                 </a>
                             </li>
                             <li>
                                 <a href="#about" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    About Us
+                                    Challenge-Solution
                                 </a>
                             </li>
                             <li>
                                 <a href="#" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    Privacy Policy
+                                    How It Works
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    Terms of Service
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    Accessibility Statement
+                                <a href="#hero" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
+                                    Bsck to Top &nbsp;↑
                                 </a>
                             </li>
                         </ul>
