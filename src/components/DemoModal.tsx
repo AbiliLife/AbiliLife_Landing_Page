@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Smartphone } from 'lucide-react';
+import WelcomeSlides from '@/assets/welcome-slides.gif';
+import Login from '@/assets/login.gif';
+import SignUp from '@/assets/signup-otp.gif';
+import ProfileSetup from '@/assets/profile-setup.gif';
+import AppOverview from '@/assets/app-overview.gif';
 
 interface DemoModalProps {
     isOpen: boolean;
@@ -11,22 +16,29 @@ interface DemoModalProps {
 const demoSections = [
     {
         id: 'welcome',
-        title: 'Welcome & Signup',
-        description: 'See how users discover and join AbiliLife',
-        gifUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=800&fit=crop&crop=center', // Placeholder
+        title: 'Welcome Slides',
+        description: 'Introduction to AbiliLife',
+        gifUrl: WelcomeSlides,
     },
     {
-        id: 'onboarding',
-        title: 'Onboarding Process',
-        description: 'Smooth introduction to accessibility features',
-        gifUrl: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=800&fit=crop&crop=center', // Placeholder
+        id: 'auth',
+        title: 'User Registration & Login',
+        description: 'Sign up and login process',
+        leftGifUrl: Login, // Login GIF
+        rightGifUrl: SignUp, // Sign Up GIF
     },
     {
         id: 'profile',
-        title: 'Profile & Preferences',
+        title: 'Profile Setup & Preferences',
         description: 'Personalized accessibility settings setup',
-        gifUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=800&fit=crop&crop=center', // Placeholder
-    }
+        gifUrl: ProfileSetup,
+    },
+    {
+        id: 'features',
+        title: 'Core App Features & Booking',
+        description: 'Explore key features and booking process',
+        gifUrl: AppOverview,
+    },
 ];
 
 // Reusable phone mockup component
@@ -92,9 +104,9 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent
                 className="
-                    max-w-7xl w-[98vw] sm:w-[95vw] h-[98vh] sm:h-[90vh] p-0 overflow-hidden bg-background border-none rounded-2xl shadow-2xl flex flex-col
-                    "
-                style={{ maxHeight: '98vh' }}
+                max-w-8xl w-[99vw] sm:w-[98vw] h-[99vh] sm:h-[98vh] p-0 overflow-visible bg-background border-none rounded-2xl shadow-2xl flex flex-col
+                "
+                style={{ maxHeight: '99vh', height: '99vh' }}
             >
                 {/* Header */}
                 <div className="relative p-6 border-b border-border bg-background">
@@ -114,17 +126,17 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 {/* Tabs Navigation */}
                 <div className="px-4 py-3 bg-muted/30 border-b border-border">
                     <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                        <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto gap-2 bg-transparent">
+                        <TabsList className="grid w-full grid-cols-4 max-w-4xl mx-auto gap-2 bg-transparent">
                             {demoSections.map((section) => (
                                 <TabsTrigger
                                     key={section.id}
                                     value={section.id}
                                     className="
-                                        text-sm font-medium rounded-lg px-3 py-2
-                                        data-[state=active]:bg-primary data-[state=active]:text-white
-                                        data-[state=active]:shadow
-                                        transition-all
-                                    "
+                        text-sm font-medium rounded-lg px-3 py-2
+                        data-[state=active]:bg-primary data-[state=active]:text-white
+                        data-[state=active]:shadow
+                        transition-all
+                        "
                                 >
                                     {section.title}
                                 </TabsTrigger>
@@ -134,7 +146,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 {/* Demo Content */}
-                <div className="flex-1 p-4 sm:p-6 overflow-auto">
+                <div className="flex-1 p-4 sm:p-6 overflow-visible">
                     <div className="max-w-6xl mx-auto">
                         {/* Section Info */}
                         <div className="text-center mb-6">
@@ -148,18 +160,59 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
 
                         {/* Smartphone Mockups */}
                         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-center">
-                            {/* Left android mockup */}
-                            <PhoneMockup
-                                fade
-                                placeholderText="Android View"
-                                keyProp="left"
-                            />
-                            {/* Right ios mockup */}
-                            <PhoneMockup
-                                fade
-                                placeholderText="iOS View"
-                                keyProp="right"
-                            />
+                            {
+                                currentSection.id === 'welcome' && (
+                                    <PhoneMockup
+                                        gifUrl={currentSection.gifUrl}
+                                        title={currentSection.title}
+                                        placeholderText="Welcome Slides"
+                                        fade
+                                        animate
+                                    />
+                                )
+                            }
+                            {
+                                currentSection.id === 'auth' && (
+                                    <>
+                                        <PhoneMockup
+                                            gifUrl={currentSection.leftGifUrl}
+                                            title={currentSection.title}
+                                            placeholderText="Left View"
+                                            fade
+                                            keyProp="left"
+                                        />
+                                        <PhoneMockup
+                                            gifUrl={currentSection.rightGifUrl}
+                                            title={currentSection.title}
+                                            placeholderText="Right View"
+                                            fade
+                                            keyProp="right"
+                                        />
+                                    </>
+                                )
+                            }
+                            {
+                                currentSection.id === 'profile' && (
+                                    <PhoneMockup
+                                        gifUrl={currentSection.gifUrl}
+                                        title={currentSection.title}
+                                        placeholderText="Profile Setup"
+                                        fade
+                                        animate
+                                    />
+                                )
+                            }
+                            {
+                                currentSection.id === 'features' && (
+                                    <PhoneMockup
+                                        gifUrl={currentSection.gifUrl}
+                                        title={currentSection.title}
+                                        placeholderText="Core Features"
+                                        fade
+                                        animate
+                                    />
+                                )
+                            }
                         </div>
                     </div>
                 </div>
