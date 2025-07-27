@@ -8,8 +8,9 @@ const Header = () => {
     const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
     const navItems = [
-        { name: 'About', href: '#about' },
-        { name: 'Ecosystem', href: '#ecosystem' },
+        { name: 'The Ecosystem', href: '#ecosystem' },
+        { name: 'Challenge & Solution', href: '#challenge-solution' },
+        { name: 'How It Works', href: '#how-it-works' },
         { name: 'The Team', href: '#team' },
         { name: 'Contact', href: '#contact' },
     ];

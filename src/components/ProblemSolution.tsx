@@ -59,7 +59,7 @@ const ProblemSolution = () => {
     ];
 
     return (
-        <section id="about" className="py-16 lg:py-24 bg-white">
+        <section id="challenge-solution" className="py-16 lg:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16">
                     {/* Problem - Statistics */}

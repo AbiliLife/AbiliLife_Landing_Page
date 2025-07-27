@@ -7,7 +7,7 @@ import heroSample from '@/assets/hero-sample.png';
 
 const Hero = () => {
     return (
-        <section className="bg-gradient-to-br from-primary/5 to-white py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24" id='hero'>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Text Content */}

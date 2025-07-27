@@ -51,7 +51,7 @@ const Ecosystem = () => {
     ];
 
     return (
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden" id="ecosystem">
             {/* Background decorative elements */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary rounded-full"></div>
