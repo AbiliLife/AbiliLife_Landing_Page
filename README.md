@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
+# AbiliLife Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Accessible transport for wheelchair users in Nairobi, Kenya.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the landing page for AbiliLife Mobility — a pilot program helping wheelchair users find accessible rides in Nairobi.
 
-## Expanding the ESLint configuration
+**Branch:** `phoenix-landing-2026`  
+**Status:** Foundation build (January 2026)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework:** Astro 5
+- **Styling:** Tailwind CSS 4
+- **Language:** TypeScript
+- **Deployment:** Static HTML (zero JavaScript by default)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/
+│   ├── Hero.astro         # Main hero section
+│   ├── Problem.astro      # Problem statement
+│   ├── Pilot.astro        # How it works + How to Join
+│   ├── Vision.astro       # Future roadmap teaser
+│   ├── Team.astro         # Team members
+│   ├── FinalCTA.astro     # Bottom call-to-action
+│   └── Footer.astro       # Site footer
+├── layouts/
+│   └── Layout.astro       # Base HTML layout
+├── pages/
+│   └── index.astro        # Homepage
+├── styles/
+│   └── global.css         # Global styles + Tailwind
+└── assets/                # Source images
+public/
+└── images/                # Optimized images for web
+    └── team/              # Team photos
+docs/
+├── REDESIGN_PLAN.md       # Section structure
+├── CONTENT_STRATEGY.md    # Messaging & tone
+└── TECH_STACK_DECISION.md # Stack rationale
+```
+
+## URLs
+
+| Purpose | URL |
+|---------|-----|
+| APK Download | https://expo.dev/accounts/abililife-dev/projects/abililife/builds/d0dddb8a-94f7-42e1-93e3-4ccecb1b96ff |
+| User Testing Form | https://forms.gle/4sk1xC5b3FspQGQr5 |
+| Partner Form | https://forms.gle/HLMAG176dtbiz9ws9 |
+| WhatsApp Support | https://wa.me/254742560540 |
+
+## Accessibility
+
+- Semantic HTML with proper heading hierarchy
+- ARIA labels where needed
+- Keyboard navigable
+- Color contrast ≥ 4.5:1
+- Touch targets ≥ 44px
+- No auto-playing media
+
+## Performance
+
+- Zero JavaScript by default (Astro islands architecture)
+- Static HTML output for fastest possible load times
+- Optimized for low-bandwidth (3G) connections
+- Target: Lighthouse 90+ on mobile
+
+## License
+
+© 2026 AbiliLife. All rights reserved.

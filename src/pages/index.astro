@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Pilot from '../components/Pilot.astro';
+import Vision from '../components/Vision.astro';
+import Team from '../components/Team.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "AbiliLife — Accessible Rides for Wheelchair Users in Nairobi";
+const description = "AbiliLife Mobility helps wheelchair users in Nairobi find accessible transport. Download the pilot app and join our early access program.";
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Hero />
+    <Problem />
+    <Pilot />
+    <Vision />
+    <Team />
+    <FinalCTA />
+  </main>
+  <Footer />
+</Layout>

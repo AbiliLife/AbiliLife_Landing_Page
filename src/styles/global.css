@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* AbiliLife Brand Colors */
+@theme {
+  --color-brand: #2563eb;
+  --color-brand-dark: #1d4ed8;
+  --color-brand-light: #3b82f6;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus States for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  min-height: 44px;
+  transition: background-color 150ms ease, transform 150ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-dark);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-brand);
+  border: 2px solid var(--color-brand);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface);
+}
+
+/* Section Spacing */
+.section {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 2rem;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}

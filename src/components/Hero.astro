@@ -1,0 +1,76 @@
+---
+/**
+ * Hero Section
+ * Purpose: First impression. Answer "What is this?" instantly.
+ * CTA: Primary only (APK download)
+ */
+
+const APK_URL = "https://expo.dev/accounts/abililife-dev/projects/abililife/builds/d0dddb8a-94f7-42e1-93e3-4ccecb1b96ff";
+---
+
+<section class="section bg-white" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-brand bg-blue-50 rounded-full">
+        <span class="w-2 h-2 bg-green-500 rounded-full" aria-hidden="true"></span>
+        Pilot Phase — Nairobi, Kenya
+      </div>
+      
+      <!-- Headline -->
+      <h1 
+        id="hero-heading" 
+        class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4"
+      >
+        Accessible rides for wheelchair users in Nairobi.
+      </h1>
+      
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+        We're testing an Android app that connects you with wheelchair-friendly transport. 
+        Join our pilot in Nairobi.
+      </p>
+      
+      <!-- Primary CTA -->
+      <a 
+        href={APK_URL}
+        class="btn btn-primary text-lg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg 
+          class="w-5 h-5" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          />
+        </svg>
+        Download the Pilot App
+      </a>
+      
+      <!-- Platform Note -->
+      <p class="mt-4 text-sm text-slate-500">
+        Android APK • Early Access • Manual install
+      </p>
+    </div>
+    
+    <!-- Hero Image -->
+    <div class="mt-12 max-w-4xl mx-auto">
+      <img 
+        src="/images/hero-mobility.png"
+        alt="Wheelchair user entering an accessible vehicle in Nairobi"
+        class="w-full h-auto rounded-xl shadow-lg"
+        width="896"
+        height="504"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
