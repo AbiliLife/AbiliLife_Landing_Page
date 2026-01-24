@@ -8,10 +8,10 @@ const Header = () => {
     const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
     const navItems = [
-        { name: 'The Ecosystem', href: '#ecosystem' },
-        { name: 'Challenge & Solution', href: '#challenge-solution' },
         { name: 'How It Works', href: '#how-it-works' },
-        { name: 'The Team', href: '#team' },
+        { name: 'The Problem', href: '#problem' },
+        { name: 'Our Vision', href: '#vision' },
+        { name: 'Team', href: '#team' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -47,7 +47,7 @@ const Header = () => {
                             className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                             onClick={() => setIsDemoModalOpen(true)}
                         >
-                            See Demo <Smartphone className="inline ml-2" />
+                            Try Our Pilot <Smartphone className="inline ml-2" />
                         </button>
                     </div>
 
@@ -81,7 +81,7 @@ const Header = () => {
                                 className="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors mt-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                                 onClick={() => setIsDemoModalOpen(true)}
                             >
-                                See Demo
+                                Try Our Pilot
                             </button>
                         </div>
                     </div>

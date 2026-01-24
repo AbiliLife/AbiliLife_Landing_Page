@@ -45,22 +45,22 @@ const Footer = () => {
                         <ul className="space-y-2">
                             <li>
                                 <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    The Ecosystem
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#about" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    Challenge-Solution
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
                                     How It Works
                                 </a>
                             </li>
                             <li>
+                                <a href="#problem" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
+                                    The Problem
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#vision" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
+                                    Our Vision
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#hero" className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                                    Bsck to Top &nbsp;↑
+                                    Back to Top &nbsp;↑
                                 </a>
                             </li>
                         </ul>
@@ -97,7 +97,7 @@ const Footer = () => {
                 <div className="border-t border-gray-800 mt-12 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 text-sm">
-                            © 2025 AbiliLife. All rights reserved.
+                            © 2026 AbiliLife. All rights reserved.
                         </p>
                         <p className="text-gray-400 text-sm mt-4 md:mt-0">
                             Built with accessibility and inclusion at heart ❤️
