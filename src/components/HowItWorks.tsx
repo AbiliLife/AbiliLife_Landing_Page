@@ -2,28 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Settings, Smartphone, CheckCircle } from 'lucide-react';
 
-import DemoModal from './DemoModal';
-
 const HowItWorks = () => {
-    const [isDemoOpen, setIsDemoOpen] = React.useState(false);
     const steps = [
         {
             icon: Settings,
             title: 'Set Your Preferences',
-            description: 'Configure accessibility needs, preferred pickup locations, and caregiver notifications in your profile.',
-            details: ['Wheelchair type & size', 'Mobility aid requirements', 'Communication preferences', 'Emergency contacts']
+            description: 'Tell us about your accessibility needs — wheelchair type, transfer assistance, communication preferences. We save this so you don\'t repeat it every time.',
+            details: ['Wheelchair type & size', 'Transfer assistance needs', 'Communication preferences', 'Emergency contacts']
         },
         {
             icon: Smartphone,
-            title: 'Request Your Ride',
-            description: 'Book instantly through our accessible app or call our 24/7 support line for assistance.',
-            details: ['One-tap booking', 'Voice commands', 'Large button interface', 'Multi-language support']
+            title: 'Request a Ride',
+            description: 'Share your pickup and drop-off locations with us. We\'ll connect you with an accessible vehicle through our partner network.',
+            details: ['Enter pickup location', 'Enter destination', 'Add any trip notes', 'Submit your request']
         },
         {
             icon: CheckCircle,
-            title: 'Travel Safely',
-            description: 'Board your ramp-equipped vehicle while caregivers receive real-time updates throughout your journey.',
-            details: ['GPS tracking', 'Arrival notifications', 'Safety check-ins', 'Emergency SOS button']
+            title: 'Travel with Peace of Mind',
+            description: 'Board your wheelchair-accessible vehicle. You can share trip details with your caregiver or family via WhatsApp.',
+            details: ['Accessible vehicle arrives', 'Share details with caregivers', 'Rate your experience', 'Provide feedback']
         }
     ];
 
@@ -38,12 +35,11 @@ const HowItWorks = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                        How <span className="text-primary">AbiliLife Mobility</span> Works {' '}
-                        {/* <span>Current Beta</span> */}
-                        <span className="text-sm text-gray-500"> (Ongoing Beta)</span>
+                        How It Works —{' '}
+                        <span className="text-primary">Mobility Pilot</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Our transport module, AbiliLife Mobility, is designed to make travel easier and safer for individuals with mobility challenges. Here’s how it works:
+                        AbiliLife Mobility helps wheelchair users request accessible rides in Nairobi. Here's how the pilot works:
                     </p>
                 </motion.div>
 
@@ -98,20 +94,19 @@ const HowItWorks = () => {
                     viewport={{ once: true }}
                     className="text-center mt-12"
                 >
-                    <button
-                        onClick={() => setIsDemoOpen(true)}
-                        className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer"
-                    >
-                        See Demo
-                        <Smartphone className="inline ml-2" />
-                    </button>
-                    <p className="text-sm text-gray-500 mt-3">
-                        App Coming soon to Google Play and Apple App Store
+                    <p className="text-gray-600 mb-6">
+                        Ready to test AbiliLife Mobility? Chat with us on WhatsApp.
                     </p>
+                    <a
+                        href="https://wa.me/254742560540?text=Hi,%20I'd%20like%20to%20try%20the%20AbiliLife%20Mobility%20pilot"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    >
+                        Try the Mobility Pilot
+                    </a>
                 </motion.div>
             </div>
-            {/* Demo Modal */}
-            <DemoModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
         </section>
     );
 };

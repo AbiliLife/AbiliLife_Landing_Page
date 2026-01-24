@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-// import { ArrowRight, Phone } from 'lucide-react';
 
 import heroSample from '@/assets/hero-sample.png';
 // import heroSample1 from '@/assets/hero-sample-1.png';
@@ -18,35 +17,41 @@ const Hero = () => {
                         className="text-center lg:text-left"
                     >
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                            Reimagining{' '}
-                            <span className="text-primary">Inclusive Services</span>
+                            Accessible Rides for{' '}
+                            <span className="text-primary">Wheelchair Users in Nairobi</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                            We are building a super app ecosystem where Persons with Disabilities and caregivers can access essential services with dignity and ease.
+                            We're testing a new way to request wheelchair-accessible rides. Join our pilot program — share your needs, connect with accessible vehicles, and help us build something better.
                         </p>
 
-                        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2">
-                                Book Your Ride
-                                <ArrowRight className="h-5 w-5" />
-                            </button>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a
+                                href="https://wa.me/254742560540?text=Hi,%20I'd%20like%20to%20try%20the%20AbiliLife%20Mobility%20pilot"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2"
+                            >
+                                Try the Mobility Pilot
+                            </a>
 
-                            <button className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2">
-                                <Phone className="h-5 w-5" />
-                                Call Support
-                            </button>
-                        </div> */}
+                            <a
+                                href="#how-it-works"
+                                className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2"
+                            >
+                                See How It Works
+                            </a>
+                        </div>
 
                         {/* Trust indicators */}
                         <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-gray-500">
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                Community-First Approach
+                                Pilot Phase — Nairobi, Kenya
                             </div>
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                5 Essential Service Branches
+                                Community-Built
                             </div>
                         </div>
                     </motion.div>

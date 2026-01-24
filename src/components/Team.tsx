@@ -57,7 +57,7 @@ const Team = () => {
                         The Team Behind <span className="text-primary">AbiliLife</span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Meet the passionate individuals dedicated to improving accessibility and independence for persons with disabilities across Africa.
+                        Meet the team building AbiliLife Mobility. We're based in Nairobi and working with the disability community to test new ways to improve transport access.
                     </p>
                 </div>
 
