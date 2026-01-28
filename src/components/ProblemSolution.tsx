@@ -16,7 +16,7 @@ const ProblemSolution = () => {
         {
             icon: Phone,
             title: 'WhatsApp-Friendly',
-            description: 'Don\'t want an app? You can request rides and get updates via WhatsApp.'
+            description: 'Don\'t want an app? You can request rides and get updates via WhatsApp and SMS too.'
         },
         {
             icon: Shield,
@@ -104,9 +104,12 @@ const ProblemSolution = () => {
                         <div className="mt-8">
                             <a
                                 href="#how-it-works"
-                                className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                                className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary hover:text-white hover:shadow-xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2"
                             >
-                                Learn How It Works
+                                See How It Works
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
                             </a>
                         </div>
                     </motion.div>
