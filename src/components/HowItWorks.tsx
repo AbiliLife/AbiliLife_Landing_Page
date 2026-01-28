@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Settings, Smartphone, CheckCircle } from 'lucide-react';
 
@@ -7,19 +6,19 @@ const HowItWorks = () => {
         {
             icon: Settings,
             title: 'Set Your Preferences',
-            description: 'Tell us about your accessibility needs — wheelchair type, transfer assistance, communication preferences. We save this so you don\'t repeat it every time.',
+            description: 'Tell us about your accessibility needs. We save this so you don\'t repeat it every time.',
             details: ['Wheelchair type & size', 'Transfer assistance needs', 'Communication preferences', 'Emergency contacts']
         },
         {
             icon: Smartphone,
             title: 'Request a Ride',
-            description: 'Share your pickup and drop-off locations with us. We\'ll connect you with an accessible vehicle through our partner network.',
+            description: 'Enter your pickup and drop-off locations. We\'ll connect you with an accessible vehicle through our partner network.',
             details: ['Enter pickup location', 'Enter destination', 'Add any trip notes', 'Submit your request']
         },
         {
             icon: CheckCircle,
             title: 'Travel with Peace of Mind',
-            description: 'Board your wheelchair-accessible vehicle. You can share trip details with your caregiver or family via WhatsApp.',
+            description: 'Board your wheelchair-accessible vehicle. You can share trip details with your caregiver or family via WhatsApp/SMS.',
             details: ['Accessible vehicle arrives', 'Share details with caregivers', 'Rate your experience', 'Provide feedback']
         }
     ];
@@ -95,16 +94,22 @@ const HowItWorks = () => {
                     className="text-center mt-12"
                 >
                     <p className="text-gray-600 mb-6">
-                        Ready to test AbiliLife Mobility? Chat with us on WhatsApp.
+                        Ready to test AbiliLife Mobility? Download the Android APK below.
                     </p>
                     <a
-                        href="https://wa.me/254742560540?text=Hi,%20I'd%20like%20to%20try%20the%20AbiliLife%20Mobility%20pilot"
+                        href="https://expo.dev/accounts/abililife-dev/projects/abililife/builds/d0dddb8a-94f7-42e1-93e3-4ccecb1b96ff"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                     >
-                        Try the Mobility Pilot
+                        Try the Mobility Pilot APK
                     </a>
+                    <p className="text-gray-600 mt-6">
+                        (Android only for now. iOS version coming soon!)
+                    </p>
+                    <p className="text-gray-600 mb-6">
+                        Incase of any issues, please reach out via WhatsApp <a href="https://wa.me/254742560540" target="_blank" rel="noopener noreferrer" className="text-primary underline">here</a>.
+                    </p>
                 </motion.div>
             </div>
         </section>
