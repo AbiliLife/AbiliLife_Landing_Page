@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin, Twitter, X, ZoomIn } from 'lucide-react';
 
 import KevinProfile from '@/assets/kevin-profile-img.jpeg';
 import EliProfile from '@/assets/eli-profile.jpeg';
@@ -10,6 +11,8 @@ import LibanProfile from '@/assets/liban-profile-img.png';
 import TeamImg from '@/assets/team.jpeg';
 
 const Team = () => {
+    const [isImageOpen, setIsImageOpen] = useState(false);
+    
     const teamMembers = [
         {
             id: 1,
@@ -122,18 +125,57 @@ const Team = () => {
                     ))}
                 </div>
                 <div className="mt-12">
-                    <div className="relative w-full h-[390px] rounded-lg overflow-hidden shadow-lg">
+                    {/* Team Photo - Tap to view full */}
+                    <div 
+                        className="relative w-full rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+                        onClick={() => setIsImageOpen(true)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => e.key === 'Enter' && setIsImageOpen(true)}
+                        aria-label="View team photo in full screen"
+                    >
                         <img
                             src={TeamImg}
-                            alt="Team working together"
-                            className="w-full h-full object-cover filter grayscale-[20%] brightness-90"
+                            alt="The AbiliLife founding team"
+                            className="w-full h-auto object-contain filter grayscale-[20%] brightness-90 group-hover:brightness-100 transition-all"
                         />
-                        {/* You can adjust the filter values above as needed */}
+                        {/* Tap hint overlay */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-3 shadow-lg">
+                                <ZoomIn className="w-5 h-5 text-gray-700" />
+                            </div>
+                        </div>
+                        {/* Mobile tap hint */}
+                        <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded md:hidden">
+                            Tap to enlarge
+                        </div>
                     </div>
                     <p className="text-sm text-muted-foreground mt-4">
                         Our team is committed to making a difference in the lives of persons with disabilities.
                     </p>
                 </div>
+
+                {/* Lightbox Modal */}
+                {isImageOpen && (
+                    <div 
+                        className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+                        onClick={() => setIsImageOpen(false)}
+                    >
+                        <button
+                            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors p-2"
+                            onClick={() => setIsImageOpen(false)}
+                            aria-label="Close image"
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+                        <img
+                            src={TeamImg}
+                            alt="The AbiliLife founding team"
+                            className="max-w-full max-h-full object-contain rounded-lg"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                )}
             </div>
         </section>
     );
