@@ -24,7 +24,7 @@ const Team = () => {
             id: 2,
             name: "Eli Keli",
             role: "Co-Founder & Product Lead",
-            bio: "Software Engineer passionate about building impactful, inclusive tech for underserved communities. Leads product design and MVP development at AbiliLife, focusing on accessibility, disability tech, and human-centered design. Experienced in mobile app development and startup growth.",
+            bio: "Software Engineer passionate about building impactful, inclusive tech for underserved communities. Leads product design and MVP development. Experienced in mobile app development, disability tech, and human-centered design.",
             image: EliProfile,
             linkedin: "https://www.linkedin.com/in/eli-keli/",
             twitter: "https://x.com/eli_muthoka"
@@ -32,8 +32,8 @@ const Team = () => {
         {
             id: 3,
             name: "Philip Machar",
-            role: "Co-Founder & Technical Lead",
-            bio: "Frontend developer and Software Engineer, passionate about building accessible, user-centered web applications. Inspired by real-world accessibility challenges, Philip creates responsive, inclusive interfaces and has led award-winning projects addressing digital barriers.",
+            role: "Co-Founder & Technical Support",
+            bio: "Inspired by real-world accessibility challenges, Philip creates responsive, inclusive interfaces and has led award-winning projects addressing digital barriers.",
             image: PhilipProfile,
             linkedin: "https://www.linkedin.com/in/philip-machar/",
             twitter: "https://x.com/Philip_Machar"
@@ -42,7 +42,7 @@ const Team = () => {
             id: 4,
             name: "Liban Hassan",
             role: "Co-Founder & Relations Manager",
-            bio: "Aspiring fullstack developer passionate about solving real-world problems with innovative solutions. Liban leads strategic partnerships, team engagement, and event planning to support AbiliLife’s mission of improving accessibility for persons with disabilities.",
+            bio: "Liban leads strategic partnerships, team engagement, and event planning to support AbiliLife’s mission of improving accessibility for persons with disabilities.",
             image: LibanProfile,
             linkedin: "https://www.linkedin.com/in/liban-hassan-noor/",
             twitter: "#"
@@ -57,7 +57,7 @@ const Team = () => {
                         The Team Behind <span className="text-primary">AbiliLife</span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Meet the team building AbiliLife Mobility. We're based in Nairobi and working with the disability community to test new ways to improve transport access.
+                        Meet the AbiliLife founding team. We're based in Nairobi and working with the disability community to test new ways to improve transport access.
                     </p>
                 </div>
 
