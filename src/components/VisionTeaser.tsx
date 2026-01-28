@@ -9,9 +9,9 @@ const VisionTeaser = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="max-w-3xl mx-auto text-center"
+                    className="max-w-3xl mx-auto"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
                         Where We're Headed
                     </h2>
                     
@@ -25,14 +25,14 @@ const VisionTeaser = () => {
                         </p>
                         
                         <ul className="text-left max-w-xl mx-auto space-y-2 mb-4">
+                            <li>• Assistive devices (AbiliLife Access)</li>
                             <li>• Healthcare services (AbiliLife Care)</li>
                             <li>• Employment opportunities (AbiliLife Work)</li>
-                            <li>• Assistive devices (AbiliLife Access)</li>
                             <li>• Educational resources (AbiliLife Learn)</li>
                         </ul>
                         
-                        <p className="italic text-gray-500">
-                            These are explorations, not promises. Mobility comes first.
+                        <p>
+                            Our goal is to create an ecosystem of solutions that empower persons with disabilities to live more independent, connected lives.
                         </p>
                     </div>
                 </motion.div>
