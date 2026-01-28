@@ -1,4 +1,4 @@
-import { Twitter, Instagram, MessageCircleMore, Mail, Phone, MapPin } from 'lucide-react';
+import { Twitter, Instagram, MessageCircleMore, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
     const socialLinks = [
@@ -10,7 +10,6 @@ const Footer = () => {
         { icon: Phone, text: '+254 742 560 540', href: 'tel:+254742560540' },
         { icon: MessageCircleMore, text: 'Chat with us', href: 'https://wa.me/254742560540' },
         { icon: Mail, text: 'abililifekenya@gmail.com', href: 'mailto:abililifekenya@gmail.com' },
-        { icon: MapPin, text: 'Nairobi, Kenya', href: '#' },
     ];
 
     return (
@@ -79,7 +78,7 @@ const Footer = () => {
                                     target='_blank'
                                     rel="noopener noreferrer"
                                 >
-                                    <contact.icon className="h-5 w-5 text-primary" />
+                                    <contact.icon className="h-5 w-5 text-white" />
                                     {contact.text}
                                 </a>
                             ))}
