@@ -70,7 +70,7 @@ const EcosystemRoadmap = () => {
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
                         Our AbiliLife <span className="text-primary">Roadmap</span>
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto text-center">
                         We're building a comprehensive digital ecosystem of services designed to enhance dignity, access, and independence for persons with disabilities — one step at a time.
                     </p>
                 </motion.div>
