@@ -9,7 +9,7 @@ import mobileImage from '@/assets/hero-image.png';
 
 const Hero = () => {
     return (
-        <section className="bg-white h-screen flex items-center py-20 " id='hero'>
+        <section className="bg-white min-h-screen flex items-center py-12 pb-24 lg:py-20 lg:pb-20" id='hero'>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Text Content */}
@@ -91,14 +91,14 @@ const Hero = () => {
                     >
                         <motion.div
                             animate={{
-                                y: [0, -10, 0],
+                                y: [0, -8, 0],
                             }}
                             transition={{
                                 duration: 3,
                                 repeat: Infinity,
                                 ease: "easeInOut"
                             }}
-                            className="relative w-full max-w-[360px]"
+                            className="relative w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[360px]"
                         >
                             {/* Glow effect */}
                             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110"></div>
