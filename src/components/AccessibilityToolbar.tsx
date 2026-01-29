@@ -1,22 +1,32 @@
 import { useState, useEffect } from 'react';
-import { Contrast, Volume2, Accessibility } from 'lucide-react';
+import { Contrast, Volume2, Accessibility, VolumeX } from 'lucide-react';
 
 const AccessibilityToolbar = () => {
-    const [fontSize, setFontSize] = useState(16);
-    const [highContrast, setHighContrast] = useState(false);
+    const [fontSize, setFontSize] = useState(() => {
+        const saved = localStorage.getItem('a11y-font-size');
+        return saved ? parseInt(saved) : 16;
+    });
+    const [highContrast, setHighContrast] = useState(() => {
+        return localStorage.getItem('a11y-high-contrast') === 'true';
+    });
     const [isVisible, setIsVisible] = useState(false);
+    const [isSpeaking, setIsSpeaking] = useState(false);
 
     useEffect(() => {
         // Apply font size changes
         document.documentElement.style.fontSize = `${fontSize}px`;
+        localStorage.setItem('a11y-font-size', fontSize.toString());
+    }, [fontSize]);
 
+    useEffect(() => {
         // Apply high contrast mode
         if (highContrast) {
             document.body.classList.add('high-contrast');
         } else {
             document.body.classList.remove('high-contrast');
         }
-    }, [fontSize, highContrast]);
+        localStorage.setItem('a11y-high-contrast', highContrast.toString());
+    }, [highContrast]);
 
     const increaseFontSize = () => {
         if (fontSize < 24) setFontSize(fontSize + 2);
@@ -30,10 +40,20 @@ const AccessibilityToolbar = () => {
         setHighContrast(!highContrast);
     };
 
-    const readPageContent = () => {
+    const toggleReadAloud = () => {
         if ('speechSynthesis' in window) {
-            const text = document.body.innerText;
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+            if (isSpeaking) {
+                window.speechSynthesis.cancel();
+                setIsSpeaking(false);
+            } else {
+                const mainContent = document.querySelector('main');
+                const text = mainContent ? mainContent.innerText : document.body.innerText;
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.onend = () => setIsSpeaking(false);
+                utterance.onerror = () => setIsSpeaking(false);
+                window.speechSynthesis.speak(utterance);
+                setIsSpeaking(true);
+            }
         }
     };
 
@@ -101,12 +121,26 @@ const AccessibilityToolbar = () => {
                         {/* Screen Reader */}
                         <div>
                             <button
-                                onClick={readPageContent}
-                                className="w-full flex items-center gap-2 p-2 rounded text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors"
-                                aria-label="Read page content aloud"
+                                onClick={toggleReadAloud}
+                                className={`w-full flex items-center gap-2 p-2 rounded text-sm transition-colors ${
+                                    isSpeaking
+                                        ? 'bg-primary text-white'
+                                        : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                                }`}
+                                aria-label={isSpeaking ? 'Stop reading' : 'Read page content aloud'}
+                                aria-pressed={isSpeaking}
                             >
-                                <Volume2 className="h-4 w-4" />
-                                Read Aloud
+                                {isSpeaking ? (
+                                    <>
+                                        <VolumeX className="h-4 w-4" />
+                                        Stop Reading
+                                    </>
+                                ) : (
+                                    <>
+                                        <Volume2 className="h-4 w-4" />
+                                        Read Aloud
+                                    </>
+                                )}
                             </button>
                         </div>
                     </div>
