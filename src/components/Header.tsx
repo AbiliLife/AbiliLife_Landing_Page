@@ -8,15 +8,15 @@ const Header = () => {
     const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
     const navItems = [
+        { name: 'The Challenge', href: '#problem' },
         { name: 'How It Works', href: '#how-it-works' },
-        { name: 'The Problem', href: '#problem' },
         { name: 'Our Vision', href: '#vision' },
-        { name: 'Team', href: '#team' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Ecosystem Roadmap', href: '#ecosystem' },
+        { name: 'The Team', href: '#team' }
     ];
 
     return (
-        <header className="bg-white shadow-sm sticky top-0 z-40">
+        <header className="bg-white sticky top-0 z-40">
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
@@ -47,7 +47,7 @@ const Header = () => {
                             className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                             onClick={() => setIsDemoModalOpen(true)}
                         >
-                            Try Our Pilot <Smartphone className="inline ml-2" />
+                            See Demo <Smartphone className="inline ml-2" />
                         </button>
                     </div>
 
@@ -81,7 +81,7 @@ const Header = () => {
                                 className="w-full bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors mt-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                                 onClick={() => setIsDemoModalOpen(true)}
                             >
-                                Try Our Pilot
+                                See Demo
                             </button>
                         </div>
                     </div>
